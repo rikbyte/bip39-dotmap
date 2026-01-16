@@ -2,7 +2,6 @@
 生成属于你自己的Bip-39助记词顺序
 Generate your own Bip-39 mnemonic word order.
 """
-import datetime
 import random
 
 secure_rng = random.SystemRandom()
