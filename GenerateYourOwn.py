@@ -5,14 +5,10 @@ Generate your own Bip-39 mnemonic word order.
 import datetime
 import random
 
-# seed = "YOUR_OWN_SEED"
-seed = datetime.datetime.now().timestamp()
-
-print("Seed : {}".format(seed))
-random.seed(seed)
+secure_rng = random.SystemRandom()
 with open('english.txt', 'r') as f:
     mnemonic = [x.strip() for x in f.readlines()]
-random.shuffle(mnemonic)
+secure_rng.shuffle(mnemonic)
 
 
 def parse(s: str) -> str:
